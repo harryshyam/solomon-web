@@ -5,6 +5,7 @@ import {
   TrendingUp, Wallet, Search, ShieldCheck, Trophy, 
   BarChart3, PlusCircle, CheckCircle2, DollarSign, RefreshCw 
 } from "lucide-react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 interface Market {
   id: number;
@@ -133,7 +134,7 @@ export default function SolomonApp() {
       {/* Header Bar */}
       <header className="border-b border-slate-800 bg-[#0d1322] px-6 py-4 flex items-center justify-between sticky top-0 z-50">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 to-yellow-400 flex items-center justify-[#0b0f19] font-bold text-xl justify-center text-slate-950 shadow-lg shadow-amber-500/20">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 to-yellow-400 flex items-center justify-center font-bold text-xl text-slate-950 shadow-lg shadow-amber-500/20">
             S
           </div>
           <span className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 bg-clip-text text-transparent">
@@ -163,7 +164,7 @@ export default function SolomonApp() {
           </button>
         </nav>
 
-        {/* Balance & Wallet Simulation Indicator */}
+        {/* Balance & Live Web3 Wallet Header */}
         <div className="flex items-center gap-4">
           <div className="bg-[#141c2e] border border-amber-500/30 px-4 py-2 rounded-xl flex items-center gap-2">
             <DollarSign className="w-4 h-4 text-amber-400" />
@@ -177,6 +178,9 @@ export default function SolomonApp() {
           >
             <RefreshCw className="w-3.5 h-3.5" /> Reset
           </button>
+
+          {/* RainbowKit Connect Wallet Button */}
+          <ConnectButton showBalance={false} chainStatus="icon" />
         </div>
       </header>
 
